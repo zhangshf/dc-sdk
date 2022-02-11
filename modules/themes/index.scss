@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.dc-container {
+  overflow: hidden;
+  display: block;
+}
+
+.div-icon {
+  user-select: none;
+  background-color: #fff;
+  padding: 2px 2px;
+  border-radius: 4px;
+  &:hover {
+    cursor: pointer;
+  }
+}
