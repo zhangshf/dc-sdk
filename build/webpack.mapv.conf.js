@@ -35,6 +35,7 @@ module.exports = env => {
       path: path.resolve(__dirname, '..', 'packages/mapv/dist'),
       publicPath: publicPath,
       library: 'DcMapv',
+      libraryExport: 'default',
       libraryTarget: 'umd',
       umdNamedDefine: true
     },
@@ -57,7 +58,7 @@ module.exports = env => {
       extensions: ['.js', '.json', '.css'],
       alias: {
         '@dc-modules': path.resolve(__dirname, '..', 'modules'),
-        'mapv-lib': path.resolve(__dirname, '..', 'libs/mapv.min.js'),
+        'mapv-lib': path.resolve(__dirname, '..', 'libs/mapv'),
         entry: path.resolve(__dirname, '..', 'packages/mapv/index.js')
       }
     },

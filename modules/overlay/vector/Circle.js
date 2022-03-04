@@ -92,6 +92,21 @@ class Circle extends Overlay {
   }
 
   /**
+   * Sets Text with Style
+   * @param text
+   * @param textStyle
+   * @returns {Circle}
+   */
+  setLabel(text, textStyle) {
+    this._delegate.position = Transform.transformWGS84ToCartesian(this._center)
+    this._delegate.label = {
+      ...textStyle,
+      text: text
+    }
+    return this
+  }
+
+  /**
    *
    * @param style
    * @returns {Circle}
@@ -101,8 +116,8 @@ class Circle extends Overlay {
       return this
     }
     delete style['positions']
-    this._style = style
-    Util.merge(this._delegate.polygon, this._style)
+    Util.merge(this._style, style)
+    Util.merge(this._delegate.polygon, style)
     return this
   }
 }
